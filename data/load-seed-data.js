@@ -1,6 +1,7 @@
 const client = require('../lib/client');
 // import our seed data:
 const characterArr = require('./characters.js');
+const quotesArr = require('./quotes.js');
 
 const { getEmoji } = require('../lib/emoji.js');
 run();
@@ -18,6 +19,16 @@ async function run() {
                     VALUES ($1, $2, $3, $4, $5, $6);
                 `,
         [character.name, character.img, character.species, character.gem_type, character.weapon, character.age]);
+      })
+    );
+
+    await Promise.all(
+      quotesArr.map(quote => {
+        return client.query(`
+                    INSERT INTO quotes (character, character_id, quote)
+                    VALUES ($1, $2, $3);
+                `,
+        [quote.character, quote.character_id, quote.quote]);
       })
     );
     
