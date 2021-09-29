@@ -1,7 +1,7 @@
 module.exports = [
   {
     name: 'Garnet',
-    img: 'https://banner2.cleanpng.com/20180417/fbq/kisspng-garnet-steven-universe-ruby-gemstone-lapis-lazuli-steve-borden-5ad6724e455657.576136221524003406284.jpg',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/d/d2/GarnetByKmesLenhi.png',
     species: 'Gem',
     gem_type: 'Fusion',
     weapon: 'Gauntlets',
@@ -33,7 +33,7 @@ module.exports = [
   },
   {
     name: 'Pearl',
-    img: 'https://steven-universe.fandom.com/wiki/Pearl?file=CYM+Pearl+Request+by+RylerGamerDBS.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/8/8c/Current_Pearl_Request.png',
     species: 'Gem',
     gem_type: 'Pearl',
     weapon: 'Spear | Many Swords',
@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     name: 'Amethyst',
-    img: 'https://steven-universe.fandom.com/wiki/Amethyst?file=Amethyst+CYM+Outfit.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/7/70/Jfek.png',
     species: 'Gem',
     gem_type: 'Quartz',
     weapon: 'Whip',
@@ -49,7 +49,7 @@ module.exports = [
   },
   {
     name: 'Ruby',
-    img: 'https://steven-universe.fandom.com/wiki/Ruby?file=RubyRegen2+By+TheOffColors.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/b/b4/Ruby1_ByTheOffColors.png',
     species: 'Gem',
     gem_type: 'Ruby',
     weapon: 'Gauntlet',
@@ -57,7 +57,7 @@ module.exports = [
   },
   {
     name: 'Sapphire',
-    img: 'https://steven-universe.fandom.com/wiki/Sapphire?file=SappAltExpression2.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/5/5c/SappAltExpression.png',
     species: 'Gem',
     gem_type: 'Sapphire',
     weapon: 'n/a',
@@ -65,7 +65,7 @@ module.exports = [
   },
   {
     name: 'Peridot',
-    img: 'https://steven-universe.fandom.com/wiki/Peridot?file=PeridotS6Render+By+TheOffColors.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/7/7b/Peridot1_By_TheOffColors.png',
     species: 'Gem',
     gem_type: 'Peridot',
     weapon: 'Limb enhancers',
@@ -73,7 +73,7 @@ module.exports = [
   },
   {
     name: 'Lapis Lazuli',
-    img: 'https://steven-universe.fandom.com/wiki/Lapis_Lazuli?file=Lapis+S6+By+TheOffColors.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/c/c2/Lapis_S6_By_TheOffColors.png',
     species: 'Gem',
     gem_type: 'Lapis Lazuli',
     weapon: 'Hydrokinesis',
@@ -81,7 +81,7 @@ module.exports = [
   },
   {
     name: 'Steven Universe',
-    img: 'https://steven-universe.fandom.com/wiki/Steven_Universe_(character)?file=StevenUniverse16+-2-+By+TheOffColors.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/f/f0/Steven_Shield_WD.png',
     species: '50% Gem | 50% Human',
     gem_type: 'Diamond',
     weapon: 'Shield',
@@ -89,7 +89,7 @@ module.exports = [
   },
   {
     name: 'Greg Universe',
-    img: 'https://steven-universe.fandom.com/wiki/Greg_Universe?file=Greg+Future.PNG',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/9/92/Greg_PantsCut.png',
     species: 'Human',
     gem_type: 'n/a',
     weapon: 'Guitar | Waffle Iron',
@@ -97,7 +97,7 @@ module.exports = [
   },
   {
     name: 'Lars Barriga',
-    img: 'https://steven-universe.fandom.com/wiki/Lars_Barriga?file=Lars+Barriga+-Work+Clothes-.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/4/4d/Lars_Barriga_-Work_Clothes-.png',
     species: 'Human (*)',
     gem_type: 'n/a',
     weapon: 'none',
@@ -105,7 +105,7 @@ module.exports = [
   },
   {
     name: 'Sadie Miller',
-    img: 'https://steven-universe.fandom.com/wiki/Sadie_Miller?file=Sadie+Miller.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/c/cd/Sadie_Miller.png',
     species: 'Human',
     gem_type: 'n/a',
     weapon: 'none',
@@ -113,7 +113,7 @@ module.exports = [
   },
   {
     name: 'Connie Maheswaran',
-    img: 'https://steven-universe.fandom.com/wiki/Connie_Maheswaran?file=Connie+%28SUF2%29.png',
+    img: 'https://static.wikia.nocookie.net/steven-universe/images/5/58/Connie_With_Her_Glasses_On.png',
     species: 'Human',
     gem_type: 'n/a',
     weapon: 'Pearl\'s Sword | Rose\'s Sword | Connie\'s Sword',
