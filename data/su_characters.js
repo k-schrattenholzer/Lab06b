@@ -1,4 +1,4 @@
-module.exports = [
+const characters = [
   {
     name: 'Garnet',
     img: 'https://static.wikia.nocookie.net/steven-universe/images/2/27/Garnet_With_Rings.png/',
@@ -120,3 +120,7 @@ module.exports = [
     age: '~ 15'
   },
 ];
+
+module.exports = {
+  characters
+};
