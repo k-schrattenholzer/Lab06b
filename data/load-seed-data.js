@@ -15,7 +15,7 @@ async function run() {
       characterArr.map(character => {
         return client.query(`
                     INSERT INTO characters (name, img, species, gem_type, weapon, age)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+                    VALUES ($1, $2, $3, $4, $5, $6);
                 `,
         [character.name, character.img, character.species, character.gem_type, character.weapon, character.age]);
       })
