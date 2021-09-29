@@ -24,9 +24,7 @@ async function run() {
                     species VARCHAR(512) NOT NULL,
                     gem_type VARCHAR(512) NOT NULL,
                     weapon VARCHAR(512) NOT NULL,
-                    age VARCHAR(512) NOT NULL,
-                    first_appearance VARCHAR(512) NOT NULL,
-                    voiced_by VARCHAR(512) NOT NULL,
+                    age VARCHAR(512) NOT NULL
             );
         `);
 

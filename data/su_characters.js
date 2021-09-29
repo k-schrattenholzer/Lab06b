@@ -5,9 +5,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Fusion',
     weapon: 'Gauntlets',
-    age: '~ 5,752',
-    first_appearance: 'Pilot',
-    voiced_by: 'Estelle'
+    age: '~ 5,752'
   },
   {
     name: 'Stevonnie',
@@ -15,9 +13,7 @@ module.exports = [
     species: '25% Gem | 75% Human',
     gem_type: 'Diamond',
     weapon: 'Shield',
-    age: '~ 28',
-    first_appearance: 'Alone Together',
-    voiced_by: 'AJ Michalka'
+    age: '~ 28'
   },
   {
     name: 'Smoky Quartz',
@@ -25,9 +21,7 @@ module.exports = [
     species: '75% Gem | 25% Human',
     gem_type: 'Fusion',
     weapon: 'Yo-yo',
-    age: 'unknown',
-    first_appearance: 'Earthlings',
-    voiced_by: 'Natasha Lyonne'
+    age: 'unknown'
   },
   {
     name: 'Rose Quartz',
@@ -35,9 +29,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Diamond',
     weapon: 'Shield & Sword',
-    age: '+ 6,000',
-    first_appearance: 'Gem Glow',
-    voiced_by: 'Susan Egan'
+    age: '+ 6,000'
   },
   {
     name: 'Pearl',
@@ -45,9 +37,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Pearl',
     weapon: 'Spear | Many Swords',
-    age: '+ 6,000',
-    first_appearance: 'Pilot',
-    voiced_by: 'Deedee Magno Hall'
+    age: '+ 6,000'
   },
   {
     name: 'Amethyst',
@@ -55,9 +45,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Quartz',
     weapon: 'Whip',
-    age: 'unknown',
-    first_appearance: 'Pilot',
-    voiced_by: 'Michaela Dietz'
+    age: 'unknown'
   },
   {
     name: 'Ruby',
@@ -65,9 +53,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Ruby',
     weapon: 'Gauntlet',
-    age: 'unknown',
-    first_appearance: 'Fusion Cuisine',
-    voiced_by: 'Charlyne Yi'
+    age: 'unknown'
   },
   {
     name: 'Sapphire',
@@ -75,9 +61,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Sapphire',
     weapon: 'n/a',
-    age: 'unknown',
-    first_appearance: 'Jail Break',
-    voiced_by: 'Erica Luttrell'
+    age: 'unknown'
   },
   {
     name: 'Peridot',
@@ -85,9 +69,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Peridot',
     weapon: 'Limb enhancers',
-    age: '~ 3,000',
-    first_appearance: 'Warp Tour',
-    voiced_by: 'Shelby Rabara'
+    age: '~ 3,000'
   },
   {
     name: 'Lapis Lazuli',
@@ -95,9 +77,7 @@ module.exports = [
     species: 'Gem',
     gem_type: 'Lapis Lazuli',
     weapon: 'Hydrokinesis',
-    age: '+ 6,000',
-    first_appearance: 'Mirror Gem',
-    voiced_by: 'Jennifer Paz'
+    age: '+ 6,000'
   },
   {
     name: 'Steven Universe',
@@ -105,9 +85,7 @@ module.exports = [
     species: '50% Gem | 50% Human',
     gem_type: 'Diamond',
     weapon: 'Shield',
-    age: '16',
-    first_appearance: 'Pilot',
-    voiced_by: 'Zach Callison'
+    age: '16'
   },
   {
     name: 'Greg Universe',
@@ -115,9 +93,7 @@ module.exports = [
     species: 'Human',
     gem_type: 'n/a',
     weapon: 'Guitar | Waffle Iron',
-    age: '42',
-    first_appearance: 'Laser Light Cannon',
-    voiced_by: 'Tom Scharpling'
+    age: '42'
   },
   {
     name: 'Lars Barriga',
@@ -125,9 +101,7 @@ module.exports = [
     species: 'Human (*)',
     gem_type: 'n/a',
     weapon: 'none',
-    age: 'unknown',
-    first_appearance: 'Pilot',
-    voiced_by: 'Matthew Moy | Mason Cook'
+    age: 'unknown'
   },
   {
     name: 'Sadie Miller',
@@ -135,9 +109,7 @@ module.exports = [
     species: 'Human',
     gem_type: 'n/a',
     weapon: 'none',
-    age: '~ 20',
-    first_appearance: 'Pilot',
-    voiced_by: 'Kate Micucci'
+    age: '~ 20'
   },
   {
     name: 'Connie Maheswaran',
@@ -145,8 +117,6 @@ module.exports = [
     species: 'Human',
     gem_type: 'n/a',
     weapon: 'Pearl\'s Sword | Rose\'s Sword | Connie\'s Sword',
-    age: '~ 15',
-    first_appearance: 'Bubble Buddies',
-    voiced_by: 'Grace Rolek'
+    age: '~ 15'
   },
 ];
