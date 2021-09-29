@@ -1,4 +1,4 @@
-const characters = [
+const characterArr = [
   {
     name: 'Garnet',
     img: 'https://static.wikia.nocookie.net/steven-universe/images/2/27/Garnet_With_Rings.png/',
@@ -122,5 +122,5 @@ const characters = [
 ];
 
 module.exports = {
-  characters
+  characterArr
 };
