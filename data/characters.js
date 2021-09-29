@@ -1,7 +1,7 @@
 module.exports = [
   {
     name: 'Garnet',
-    img: 'https://static.wikia.nocookie.net/steven-universe/images/2/27/Garnet_With_Rings.png/',
+    img: 'https://banner2.cleanpng.com/20180417/fbq/kisspng-garnet-steven-universe-ruby-gemstone-lapis-lazuli-steve-borden-5ad6724e455657.576136221524003406284.jpg',
     species: 'Gem',
     gem_type: 'Fusion',
     weapon: 'Gauntlets',

@@ -33,7 +33,7 @@ describe('app routes', () => {
         {
           id: 1,
           name: 'Garnet',
-          img: 'https://static.wikia.nocookie.net/steven-universe/images/2/27/Garnet_With_Rings.png/',
+          img: 'https://banner2.cleanpng.com/20180417/fbq/kisspng-garnet-steven-universe-ruby-gemstone-lapis-lazuli-steve-borden-5ad6724e455657.576136221524003406284.jpg',
           species: 'Gem',
           gem_type: 'Fusion',
           weapon: 'Gauntlets',
@@ -69,7 +69,7 @@ describe('app routes', () => {
         {
           id: 5,
           name: 'Pearl',
-          img: 'https://steven-universe.fandom.com/wiki/Pearl?file=CYM+Pearl+Request+by+RylerGamerDBS.png',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/8/8c/Current_Pearl_Request.png',
           species: 'Gem',
           gem_type: 'Pearl',
           weapon: 'Spear | Many Swords',
