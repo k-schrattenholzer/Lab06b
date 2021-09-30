@@ -174,6 +174,6 @@ module.exports = [
     gem_type: 'Fusion',
     weapon: 'none',
     age: 'ageless'
-  },
+  }
 ];
 
