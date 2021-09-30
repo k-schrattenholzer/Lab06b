@@ -232,7 +232,7 @@ describe('app routes', () => {
           character: 'Connie Maheswaran',
           character_id: 16,
           quote:'Of course it is. I like you just the way you are.'
-        },
+        }
       
       ]
       ;
@@ -379,6 +379,62 @@ describe('app routes', () => {
           weapon: 'Pearl\'s Sword | Rose\'s Sword | Connie\'s Sword',
           age: '~ 15'
         },
+        {
+          name: 'Spinel',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/48/Spinel_By_RylerGamer_-No_Shading-.png',
+          species: 'Gem',
+          gem_type: 'Spinel',
+          weapon: 'Gem Rejuvenator',
+          age: '6,000'
+        },
+        {
+          name: 'Bismuth',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/d/da/BismuthMovie.png',
+          species: 'Gem',
+          gem_type: 'Bismuth',
+          weapon: 'Shapeshifting | Breaking Point',
+          age: '+ 6,000'
+        },
+        {
+          name: 'Cookie Cat',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/1/1b/Cookie_cat_by_enchantzii-d8pa9mk.png',
+          species: 'Cat',
+          gem_type: 'n/a',
+          weapon: 'Spaceship',
+          age: 'ageless'
+        },
+        {
+          name: 'Frybo',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/1/1b/Cookie_cat_by_enchantzii-d8pa9mk.png',
+          species: 'Inanimate | Gem(when possessed)',
+          gem_type: 'n/a',
+          weapon: 'The bits!',
+          age: 'ageless'
+        },
+        {
+          name: 'Fluorite',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/8/8f/Fluorite_By_TheOffColors.png',
+          species: 'Gem',
+          gem_type: 'Fusion',
+          weapon: 'none',
+          age: 'ageless'
+        },
+        {
+          name: 'Pumpkin',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/3/38/Pumpkin_By_TheOffColors.png',
+          species: 'Sentient Pumpkin',
+          gem_type: 'n/a',
+          weapon: 'none',
+          age: 'ageless'
+        },
+        {
+          name: 'Rhodonite',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/3/39/RhodoniteModelSheetPoseByChara.png',
+          species: 'Gem',
+          gem_type: 'Fusion',
+          weapon: 'none',
+          age: 'ageless'
+        }
       ];
       const response = await fakeRequest(app).get('/characters');
 
