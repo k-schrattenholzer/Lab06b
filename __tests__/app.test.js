@@ -8,20 +8,20 @@ const client = require('../lib/client');
 
 describe('app routes', () => {
   describe('routes', () => {
-    // let token;
+    let token;
   
     beforeAll(async () => {
       execSync('npm run setup-db');
   
       await client.connect();
-      // const signInData = await fakeRequest(app)
-      //   .post('/auth/signup')
-      //   .send({
-      //     email: 'jon@user.com',
-      //     password: '1234'
-      //   });
+      const signInData = await fakeRequest(app)
+        .post('/auth/signup')
+        .send({
+          email: 'jon@user.com',
+          password: '1234'
+        });
       
-      // token = signInData.body.token; // eslint-disable-line
+      token = signInData.body.token; // eslint-disable-line
     }, 10000);
   
     afterAll(done => {
