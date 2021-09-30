@@ -1,4 +1,5 @@
 const client = require('../lib/client');
+
 // import our seed data:
 const characterArr = require('./characters.js');
 const quotesArr = require('./quotes.js');
@@ -10,7 +11,6 @@ async function run() {
 
   try {
     await client.connect();
-
 
     await Promise.all(
       characterArr.map(character => {

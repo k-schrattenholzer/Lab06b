@@ -12,6 +12,11 @@ async function run() {
 
     // run a query to create tables
     await client.query(`
+                CREATE TABLE users (
+                  id SERIAL PRIMARY KEY,
+                  email VARCHAR(256) NOT NULL,
+                  hash VARCHAR(512) NOT NULL
+                ); 
                 CREATE TABLE quotes (
                     id SERIAL PRIMARY KEY,
                     character VARCHAR(512) NOT NULL,
@@ -26,7 +31,7 @@ async function run() {
                     gem_type VARCHAR(512) NOT NULL,
                     weapon VARCHAR(512) NOT NULL,
                     age VARCHAR(512) NOT NULL
-            );
+                );
         `);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
