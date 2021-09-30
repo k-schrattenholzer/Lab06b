@@ -383,6 +383,7 @@ describe('app routes', () => {
           age: '~ 15'
         },
         {
+          id: 16,
           name: 'Spinel',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/4/48/Spinel_By_RylerGamer_-No_Shading-.png',
           species: 'Gem',
@@ -391,6 +392,7 @@ describe('app routes', () => {
           age: '6,000'
         },
         {
+          id: 17,
           name: 'Bismuth',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/d/da/BismuthMovie.png',
           species: 'Gem',
@@ -399,6 +401,7 @@ describe('app routes', () => {
           age: '+ 6,000'
         },
         {
+          id: 18,
           name: 'Cookie Cat',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/1/1b/Cookie_cat_by_enchantzii-d8pa9mk.png',
           species: 'Cat',
@@ -407,6 +410,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 19,
           name: 'Frybo',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/1/1b/Cookie_cat_by_enchantzii-d8pa9mk.png',
           species: 'Inanimate | Gem(when possessed)',
@@ -415,6 +419,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 20,
           name: 'Fluorite',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/8/8f/Fluorite_By_TheOffColors.png',
           species: 'Gem',
@@ -423,6 +428,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 21,
           name: 'Pumpkin',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/3/38/Pumpkin_By_TheOffColors.png',
           species: 'Sentient Pumpkin',
@@ -431,6 +437,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 22,
           name: 'Rhodonite',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/3/39/RhodoniteModelSheetPoseByChara.png',
           species: 'Gem',
@@ -443,5 +450,38 @@ describe('app routes', () => {
 
       expect(response.body).toEqual(expectation);
     });
+    
+    test('creates a character', async() => {
+      const expectation = 
+        {
+          id: 23,
+          name: 'Sour Cream',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
+          species: 'Human',
+          gem_type: 'n/a',
+          weapon: 'none',
+          age: '6'
+        };
+
+      const sour_cream = 
+        {
+          id: 23,
+          name: 'Sour Cream',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
+          species: 'Human',
+          gem_type: 'n/a',
+          weapon: 'none',
+          age: '6'
+        };
+
+      const data = await fakeRequest(app)
+        .post('/characters')
+        .send(sour_cream)
+        // .expect('Content-Type, /json/')
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+    });
+
   });
 });
