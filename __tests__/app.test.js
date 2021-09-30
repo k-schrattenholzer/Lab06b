@@ -22,7 +22,7 @@ describe('app routes', () => {
         });
       
       token = signInData.body.token; // eslint-disable-line
-    }, 10000);
+    }, 20000);
   
     afterAll(done => {
       return client.end(done);
@@ -40,7 +40,10 @@ describe('app routes', () => {
       }]
       ;
 
-      const response = await fakeRequest(app).get('/characters/15');
+      const response = await fakeRequest(app)
+        .get('/characters/15')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
       expect(response.body).toEqual(expectation);
     });
