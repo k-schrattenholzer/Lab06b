@@ -8,7 +8,7 @@ const client = require('../lib/client');
 
 describe('app routes', () => {
   describe('routes', () => {
-    let token;
+    // let token;
   
     beforeAll(async () => {
       execSync('npm run setup-db');
@@ -78,7 +78,7 @@ describe('app routes', () => {
         {
           id: 6,
           name: 'Amethyst',
-          img: 'https://steven-universe.fandom.com/wiki/Amethyst?file=Amethyst+CYM+Outfit.png',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/7/70/Jfek.png',
           species: 'Gem',
           gem_type: 'Quartz',
           weapon: 'Whip',
