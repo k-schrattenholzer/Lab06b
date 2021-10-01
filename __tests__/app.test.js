@@ -477,10 +477,51 @@ describe('app routes', () => {
       const data = await fakeRequest(app)
         .post('/characters')
         .send(sour_cream)
-        // .expect('Content-Type, /json/')
+        .expect('Content-Type', /json/)
         .expect(200);
 
       expect(data.body).toEqual(expectation);
+
+      const allCharacters = await fakeRequest(app)
+        .get('/characters')
+        .expect('Content-Type', /json/)
+        .expect(200);
+      
+      expect(allCharacters.body).toEqual(expect.arrayContaining([sour_cream]));
+    });
+
+    test('creates a quote', async() => {
+      
+      const expectation = 
+            {
+              id:expect.any(Number),
+              character: 'My Favorite Character',
+              character_id: 24,
+              quote:'This is a very profound quote from a beloved character.',
+            };
+
+      const new_quote = 
+            {
+              id: expect.any(Number),
+              character: 'My Favorite Character',
+              character_id: 24,
+              quote:'This is a very profound quote from a beloved character.',
+            };
+
+      const data = await fakeRequest(app)
+        .post('/quotes')
+        .send(new_quote)
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+
+      const allQuotes = await fakeRequest(app)
+        .get('/quotes')
+        .expect('Content-Type', /json/)
+        .expect(200);
+      
+      expect(allQuotes.body).toEqual(expect.arrayContaining([new_quote]));
     });
 
   });
