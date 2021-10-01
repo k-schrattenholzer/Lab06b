@@ -22,7 +22,7 @@ describe('app routes', () => {
         });
       
       token = signInData.body.token; // eslint-disable-line
-    }, 10000);
+    }, 20000);
   
     afterAll(done => {
       return client.end(done);
@@ -40,7 +40,10 @@ describe('app routes', () => {
       }]
       ;
 
-      const response = await fakeRequest(app).get('/characters/15');
+      const response = await fakeRequest(app)
+        .get('/characters/15')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
       expect(response.body).toEqual(expectation);
     });
@@ -380,6 +383,7 @@ describe('app routes', () => {
           age: '~ 15'
         },
         {
+          id: 16,
           name: 'Spinel',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/4/48/Spinel_By_RylerGamer_-No_Shading-.png',
           species: 'Gem',
@@ -388,6 +392,7 @@ describe('app routes', () => {
           age: '6,000'
         },
         {
+          id: 17,
           name: 'Bismuth',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/d/da/BismuthMovie.png',
           species: 'Gem',
@@ -396,6 +401,7 @@ describe('app routes', () => {
           age: '+ 6,000'
         },
         {
+          id: 18,
           name: 'Cookie Cat',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/1/1b/Cookie_cat_by_enchantzii-d8pa9mk.png',
           species: 'Cat',
@@ -404,6 +410,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 19,
           name: 'Frybo',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/1/1b/Cookie_cat_by_enchantzii-d8pa9mk.png',
           species: 'Inanimate | Gem(when possessed)',
@@ -412,6 +419,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 20,
           name: 'Fluorite',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/8/8f/Fluorite_By_TheOffColors.png',
           species: 'Gem',
@@ -420,6 +428,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 21,
           name: 'Pumpkin',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/3/38/Pumpkin_By_TheOffColors.png',
           species: 'Sentient Pumpkin',
@@ -428,6 +437,7 @@ describe('app routes', () => {
           age: 'ageless'
         },
         {
+          id: 22,
           name: 'Rhodonite',
           img: 'https://static.wikia.nocookie.net/steven-universe/images/3/39/RhodoniteModelSheetPoseByChara.png',
           species: 'Gem',
@@ -440,5 +450,192 @@ describe('app routes', () => {
 
       expect(response.body).toEqual(expectation);
     });
+    
+    test('creates a character', async() => {
+      const expectation = 
+        {
+          id: 23,
+          name: 'Sour Cream',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
+          species: 'Human',
+          gem_type: 'n/a',
+          weapon: 'none',
+          age: '6'
+        };
+
+      const sour_cream = 
+        {
+          id: 23,
+          name: 'Sour Cream',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
+          species: 'Human',
+          gem_type: 'n/a',
+          weapon: 'none',
+          age: '6'
+        };
+
+      const data = await fakeRequest(app)
+        .post('/characters')
+        .send(sour_cream)
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+
+      const allCharacters = await fakeRequest(app)
+        .get('/characters')
+        .expect('Content-Type', /json/)
+        .expect(200);
+      
+      expect(allCharacters.body).toEqual(expect.arrayContaining([sour_cream]));
+    });
+
+    test('creates a quote', async() => {
+      
+      const expectation = 
+            {
+              id:expect.any(Number),
+              character: 'My Favorite Character',
+              character_id: 24,
+              quote:'This is a very profound quote from a beloved character.',
+            };
+
+      const new_quote = 
+            {
+              id: expect.any(Number),
+              character: 'My Favorite Character',
+              character_id: 24,
+              quote:'This is a very profound quote from a beloved character.',
+            };
+
+      const data = await fakeRequest(app)
+        .post('/quotes')
+        .send(new_quote)
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+
+      const allQuotes = await fakeRequest(app)
+        .get('/quotes')
+        .expect('Content-Type', /json/)
+        .expect(200);
+      
+      expect(allQuotes.body).toEqual(expect.arrayContaining([new_quote]));
+    });
+
+    test('updates a quote', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            character: 'Garnet',
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
+          };
+    
+      const data = await fakeRequest(app)
+        .put('/quotes/1')
+        .send(
+          { 
+            character: 'Garnet',
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
+          })
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+    });
+
+    test('updates a character', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            name: 'Smoky Quartz',
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown'
+          };
+    
+      const data = await fakeRequest(app)
+        .put('/characters/1')
+        .send(
+          { 
+            name: 'Smoky Quartz',
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown' 
+          })
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+    });
+
+    test('deletes a character', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            name: 'Smoky Quartz',
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown'
+          };
+    
+      const data = await fakeRequest(app)
+        .delete('/characters/1')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+
+      const allCharacters = await fakeRequest(app)
+        .get('/characters')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+      
+      expect(allCharacters.body).toEqual(expect.not.arrayContaining([expectation]));
+    });
+
+    test('deletes a quote', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            character: 'Garnet',
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
+          };
+    
+      const data = await fakeRequest(app)
+        .delete('/quotes/1')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+
+      const allQuotes = await fakeRequest(app)
+        .get('/quotes')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+      
+      expect(allQuotes.body)
+        .toEqual(expect.not.arrayContaining([expectation]));
+    });
+    ///////////// new tests go above ///////////////
   });
 });
+

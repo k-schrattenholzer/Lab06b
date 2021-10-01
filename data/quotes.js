@@ -2,12 +2,12 @@ module.exports = [
   {
     character: 'Garnet',
     character_id: 1,
-    quote:'Yes... Or, you can link your mind with the energy of all existing matter, channeling the collective power of the universe through your gem! Which results in.. *summons her weapon* At least that\'s my way of doing it.',
+    quote:'Yes... Or, you can link your mind with the energy of all existing matter, channeling the collective power of the universe through your gem! Which results in.. *summons her weapon* At least that\'s my way of doing it.'
   },
   {
     character: 'Garnet',
     character_id: 1,
-    quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.',
+    quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
   },
   {
     character: 'Garnet',
