@@ -524,5 +524,31 @@ describe('app routes', () => {
       expect(allQuotes.body).toEqual(expect.arrayContaining([new_quote]));
     });
 
+    test('updates a quote', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            character: 'My Favorite Character',
+            character_id: 24,
+            quote:'This is a very profound quote from a beloved character.',
+          };
+    
+      const data = await fakeRequest(app)
+        .put('/quotes/1')
+        .send(
+          { 
+            character: 'My Favorite Character',
+            character_id: 24,
+            quote:'This is a very profound quote from a beloved character.', 
+          })
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+    });
   });
+
 });
+
