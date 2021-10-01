@@ -530,25 +530,112 @@ describe('app routes', () => {
       const expectation = 
           {
             id: expect.any(Number),
-            character: 'My Favorite Character',
-            character_id: 24,
-            quote:'This is a very profound quote from a beloved character.',
+            character: 'Garnet',
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
           };
     
       const data = await fakeRequest(app)
         .put('/quotes/1')
         .send(
           { 
-            character: 'My Favorite Character',
-            character_id: 24,
-            quote:'This is a very profound quote from a beloved character.', 
+            character: 'Garnet',
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
           })
         .expect('Content-Type', /json/)
         .expect(200); 
     
       expect(data.body).toEqual(expectation);
     });
-  });
 
+    test('updates a character', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            name: 'Smoky Quartz',
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown'
+          };
+    
+      const data = await fakeRequest(app)
+        .put('/characters/1')
+        .send(
+          { 
+            name: 'Smoky Quartz',
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown' 
+          })
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+    });
+
+    test('deletes a character', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            name: 'Smoky Quartz',
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown'
+          };
+    
+      const data = await fakeRequest(app)
+        .delete('/characters/1')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+
+      const allCharacters = await fakeRequest(app)
+        .get('/characters')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+      
+      expect(allCharacters.body).toEqual(expect.not.arrayContaining([expectation]));
+    });
+
+    test('deletes a quote', async() => 
+    {
+
+      const expectation = 
+          {
+            id: expect.any(Number),
+            character: 'Garnet',
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
+          };
+    
+      const data = await fakeRequest(app)
+        .delete('/quotes/1')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+    
+      expect(data.body).toEqual(expectation);
+
+      const allQuotes = await fakeRequest(app)
+        .get('/quotes')
+        .expect('Content-Type', /json/)
+        .expect(200); 
+      
+      expect(allQuotes.body)
+        .toEqual(expect.not.arrayContaining([expectation]));
+    });
+    ///////////// new tests go above ///////////////
+  });
 });
 
