@@ -614,14 +614,14 @@ describe('app routes', () => {
 
       const expectation = 
           {
-            id: expect.any(Number),
+            id: 2,
             character: 'Garnet',
             character_id: 1,
             quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
           };
     
       const data = await fakeRequest(app)
-        .delete('/quotes/1')
+        .delete('/quotes/2')
         .expect('Content-Type', /json/)
         .expect(200); 
     
