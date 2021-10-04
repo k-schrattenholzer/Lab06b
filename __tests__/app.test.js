@@ -42,7 +42,7 @@ describe('app routes', () => {
       ;
 
       const response = await fakeRequest(app)
-        .get('/characters/15')
+        .get('/character-info/15')
         .expect('Content-Type', /json/)
         .expect(200);
 
@@ -246,7 +246,7 @@ describe('app routes', () => {
       expect(response.body).toEqual(expectation);
     });
 
-    test('returns all characters', async() => {
+    test('returns all character-info objects', async() => {
       const expectation = [
         {
           id: 1,
@@ -469,49 +469,50 @@ describe('app routes', () => {
           age: 'ageless'
         }
       ];
-      const response = await fakeRequest(app).get('/characters');
+      const response = await fakeRequest(app).get('/character-info');
 
       expect(response.body).toEqual(expectation);
     });
     
-    // test('creates a character', async() => {
-    //   const expectation = 
-    //     {
-    //       id: 23,
-    //       name: 'Sour Cream',
-    //       img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
-    //       species: 'Human',
-    //       gem_type: 'n/a',
-    //       weapon: 'none',
-    //       age: '6'
-    //     };
+    test('creates a character', async() => {
+      const expectation = 
+        {
+          id: 23,
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
+          species: 'Human',
+          gem_type: 'n/a',
+          weapon: 'scissors',
+          age: '6',
+          character_id: 23,
+          character_name: 'Sour Cream'
+        };
 
-    //   const sour_cream = 
-    //     {
-    //       id: 23,
-    //       name: 'Sour Cream',
-    //       img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
-    //       species: 'Human',
-    //       gem_type: 'n/a',
-    //       weapon: 'none',
-    //       age: '6'
-    //     };
+      const sour_cream = 
+        {
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png',
+          species: 'Human',
+          gem_type: 'n/a',
+          weapon: 'scissors',
+          age: '6',
+          character_id: 23
+        };
 
-    //   const data = await fakeRequest(app)
-    //     .post('/characters')
-    //     .send(sour_cream)
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      // const data = 
+      await fakeRequest(app)
+        .post('/character-info')
+        .send(sour_cream)
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
+      // expect(data.body).toEqual(expectation);
 
-    //   const allCharacters = await fakeRequest(app)
-    //     .get('/characters')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const allCharacters = await fakeRequest(app)
+        .get('/character-info')
+        .expect('Content-Type', /json/)
+        .expect(200);
       
-    //   expect(allCharacters.body).toEqual(expect.arrayContaining([sour_cream]));
-    // });
+      expect(allCharacters.body).toEqual(expect.arrayContaining([expectation]));
+    });
 
     // test('creates a quote', async() => {
       

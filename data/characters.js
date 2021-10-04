@@ -64,6 +64,9 @@ module.exports = [
   },
   {
     character_name: 'Rhodonite'
+  },
+  {
+    character_name: 'Sour Cream'
   }
 
 

@@ -32,12 +32,12 @@ async function run() {
 
                 CREATE TABLE character_info (
                   id SERIAL PRIMARY KEY NOT NULL,
-                  character_id INTEGER NOT NULL REFERENCES characters(id),
                   img VARCHAR(512) NOT NULL,
                   species VARCHAR(512) NOT NULL,
                   gem_type VARCHAR(512) NOT NULL,
                   weapon VARCHAR(512) NOT NULL,
-                  age VARCHAR(512) NOT NULL
+                  age VARCHAR(512) NOT NULL,
+                  character_id INTEGER NOT NULL REFERENCES characters(id)
               );`);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
