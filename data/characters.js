@@ -30,9 +30,6 @@ module.exports = [
     character_name: 'Lapis Lazuli'
   },
   {
-    character_name: 'Stevonnie'
-  },
-  {
     character_name: 'Steven Universe'
   },
   {
