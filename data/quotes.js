@@ -101,57 +101,57 @@ module.exports = [
   },
   {
     character: 'Sapphire',
-    character_id: 17,
+    character_id: 8,
     quote:'Ruby: How am I gonna save you? Sapphire: You already did. Ruby: What!? Sapphire: You already saved me.'
   },
   {
     character: 'Sapphire',
-    character_id: 17,
+    character_id: 8,
     quote:'We won\'t stand out if we play the roles we were made for.'
   },
   {
     character: 'Peridot',
-    character_id: 10,
+    character_id: 9,
     quote:'You Gems really are as dull as dirt.'
   },
   {
     character: 'Peridot',
-    character_id: 10,
+    character_id: 9,
     quote:'Steven! You never gave up on me for reasons I don\'t understand! I\'ll do the same for you!'
   },
   {
     character: 'Lapis Lazuli',
-    character_id: 11,
+    character_id: 10,
     quote:'Can\'t you see? I can\'t stop, not for a second. Don\'t look for me. I don\'t want your help!'
   },
   {
     character: 'Lapis Lazuli',
-    character_id: 11,
+    character_id: 10,
     quote:'For a moment, I really felt like things were different, but they\'re not. No matter where I go, I\'m trapped.'
   },
   {
     character: 'Steven Universe',
-    character_id: 12,
+    character_id: 11,
     quote:'Sleep is a curse, and yet a curse I need to live.'
   },
   {
     character: 'Greg Universe',
-    character_id: 13,
+    character_id: 12,
     quote:'If every pork-chop were perfect, we wouldn\'t have hotdogs.'
   },
   {
     character: 'Lars Barriga',
-    character_id: 14,
+    character_id: 13,
     quote:'Do you ever get lonely? Even when you\'re around people?'
   },
   {
     character: 'Sadie Miller',
-    character_id: 15,
+    character_id: 14,
     quote:'Yeah, you know what? Yeah! Who cares, right? What am I afraid of? This could be fun!'
   },
   {
     character: 'Connie Maheswaran',
-    character_id: 16,
+    character_id: 15,
     quote:'Of course it is. I like you just the way you are.'
   },
 
