@@ -51,10 +51,10 @@ async function run() {
     await Promise.all(
       quotesArr.map(quote => {
         return client.query(`
-                    INSERT INTO quotes (character, character_id, quote)
-                    VALUES ($1, $2, $3);
+                    INSERT INTO quotes (character_id, quote)
+                    VALUES ($1, $2);
                 `,
-        [quote.character, quote.character_id, quote.quote]);
+        [quote.character_id, quote.quote]);
       })
     );
     

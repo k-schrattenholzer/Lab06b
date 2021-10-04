@@ -25,8 +25,7 @@ async function run() {
                 );
 
                 CREATE TABLE quotes (
-                    id SERIAL PRIMARY KEY,
-                    character VARCHAR(512) NOT NULL,
+                    id SERIAL PRIMARY KEY NOT NULL,
                     character_id INTEGER NOT NULL REFERENCES characters(id),
                     quote VARCHAR(512) NOT NULL
                 );
