@@ -514,39 +514,38 @@ describe('app routes', () => {
       expect(allCharacters.body).toEqual(expect.arrayContaining([expectation]));
     });
 
-    // test('creates a quote', async() => {
+    test('creates a quote', async() => {
+
+      const expectation = 
+        {
+          id: 32,
+          character_id: 23,
+          character_name: 'Sour Cream',
+          quote:'This is a very profound quote from a beloved character.',
+        };
+
+      const new_quote = 
+          {
+            character_id: 23,
+            quote:'This is a very profound quote from a beloved character.',
+          };
+
+      // const data = 
+      await fakeRequest(app)
+        .post('/quotes')
+        .send(new_quote)
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      // expect(data.body).toEqual(expectation);
+
+      const allQuotes = await fakeRequest(app)
+        .get('/quotes')
+        .expect('Content-Type', /json/)
+        .expect(200);
       
-    //   const expectation = 
-    //         {
-    //           id:expect.any(Number),
-    //           character: 'My Favorite Character',
-    //           character_id: 24,
-    //           quote:'This is a very profound quote from a beloved character.',
-    //         };
-
-    //   const new_quote = 
-    //         {
-    //           id: expect.any(Number),
-    //           character: 'My Favorite Character',
-    //           character_id: 24,
-    //           quote:'This is a very profound quote from a beloved character.',
-    //         };
-
-    //   const data = await fakeRequest(app)
-    //     .post('/quotes')
-    //     .send(new_quote)
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
-
-    //   expect(data.body).toEqual(expectation);
-
-    //   const allQuotes = await fakeRequest(app)
-    //     .get('/quotes')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
-      
-    //   expect(allQuotes.body).toEqual(expect.arrayContaining([new_quote]));
-    // });
+      expect(allQuotes.body).toEqual(expect.arrayContaining([expectation]));
+    });
 
     // test('updates a quote', async() => 
     // {
