@@ -1,7 +1,8 @@
 const client = require('../lib/client');
 const bcrypt = require('bcryptjs');
 // import our seed data:
-const characterArr = require('./characters.js');
+const characterNameArr = require('./characters.js');
+const characterInfoArr = require('./character_info.js');
 const quotesArr = require('./quotes.js');
 const usersData = require('./users.js');
 const { getEmoji } = require('../lib/emoji.js');
@@ -28,22 +29,32 @@ async function run() {
 
 
     await Promise.all(
-      characterArr.map(character => {
+      characterNameArr.map(character => {
         return client.query(`
-                    INSERT INTO characters (name, img, species, gem_type, weapon, age)
+                    INSERT INTO characters (character_name)
+                    VALUES ($1);
+                `,
+        [character.character_name]);
+      })
+    );
+
+    await Promise.all(
+      characterInfoArr.map(character => {
+        return client.query(`
+                    INSERT INTO character_info (img, species, gem_type, weapon, age, character_id)
                     VALUES ($1, $2, $3, $4, $5, $6);
                 `,
-        [character.name, character.img, character.species, character.gem_type, character.weapon, character.age]);
+        [character.img, character.species, character.gem_type, character.weapon, character.age, character.character_id]);
       })
     );
 
     await Promise.all(
       quotesArr.map(quote => {
         return client.query(`
-                    INSERT INTO quotes (character, character_id, quote)
-                    VALUES ($1, $2, $3);
+                    INSERT INTO quotes (character_id, quote)
+                    VALUES ($1, $2);
                 `,
-        [quote.character, quote.character_id, quote.quote]);
+        [quote.character_id, quote.quote]);
       })
     );
     

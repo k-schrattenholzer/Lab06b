@@ -19,22 +19,26 @@ async function run() {
                   hash VARCHAR(512) NOT NULL
                 ); 
 
-                CREATE TABLE quotes (
-                    id SERIAL PRIMARY KEY,
-                    character VARCHAR(512) NOT NULL,
-                    character_id INTEGER NOT NULL,
-                    quote VARCHAR(512) NOT NULL
-                );       
-
                 CREATE TABLE characters (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    name VARCHAR(512) NOT NULL,
-                    img VARCHAR(512) NOT NULL,
-                    species VARCHAR(512) NOT NULL,
-                    gem_type VARCHAR(512) NOT NULL,
-                    weapon VARCHAR(512) NOT NULL,
-                    age VARCHAR(512) NOT NULL
-                );`);
+                    character_name VARCHAR(512) NOT NULL
+                );
+
+                CREATE TABLE quotes (
+                    id SERIAL PRIMARY KEY NOT NULL,
+                    character_id INTEGER NOT NULL REFERENCES characters(id),
+                    quote VARCHAR(512) NOT NULL
+                );
+
+                CREATE TABLE character_info (
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  img VARCHAR(512) NOT NULL,
+                  species VARCHAR(512) NOT NULL,
+                  gem_type VARCHAR(512) NOT NULL,
+                  weapon VARCHAR(512) NOT NULL,
+                  age VARCHAR(512) NOT NULL,
+                  character_id INTEGER NOT NULL REFERENCES characters(id)
+              );`);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
   }
