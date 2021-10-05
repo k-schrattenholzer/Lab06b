@@ -598,34 +598,34 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
 
-    // test('deletes a character', async() => 
-    // {
+    test('deletes a character', async() => 
+    {
 
-    //   const expectation = 
-    //       {
-    //         id: expect.any(Number),
-    //         name: 'Smoky Quartz',
-    //         img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
-    //         species: '85% Gem | 75% Human',
-    //         gem_type: 'Who knows?',
-    //         weapon: 'their funny bone',
-    //         age: 'unknown'
-    //       };
+      const expectation = 
+          {
+            id: expect.any(Number),
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '75% Gem | 25% Human',
+            gem_type: 'Fusion',
+            weapon: 'Yo-yo',
+            age: 'unknown',
+            character_id: 3,
+          };
     
-    //   const data = await fakeRequest(app)
-    //     .delete('/characters/1')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200); 
+      const data = await fakeRequest(app)
+        .delete('/character-info/3')
+        .expect('Content-Type', /json/)
+        .expect(200); 
     
-    //   expect(data.body).toEqual(expectation);
+      expect(data.body).toEqual(expectation);
 
-    //   const allCharacters = await fakeRequest(app)
-    //     .get('/characters')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200); 
+      const allCharacters = await fakeRequest(app)
+        .get('/character-info')
+        .expect('Content-Type', /json/)
+        .expect(200); 
       
-    //   expect(allCharacters.body).toEqual(expect.not.arrayContaining([expectation]));
-    // });
+      expect(allCharacters.body).toEqual(expect.not.arrayContaining([expectation]));
+    });
 
     // test('deletes a quote', async() => 
     // {
