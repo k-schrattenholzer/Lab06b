@@ -627,32 +627,31 @@ describe('app routes', () => {
       expect(allCharacters.body).toEqual(expect.not.arrayContaining([expectation]));
     });
 
-    // test('deletes a quote', async() => 
-    // {
+    test('deletes a quote', async() => 
+    {
 
-    //   const expectation = 
-    //       {
-    //         id: 2,
-    //         character: 'Garnet',
-    //         character_id: 1,
-    //         quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
-    //       };
+      const expectation = 
+          {
+            id: 2,
+            character_id: 1,
+            quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
+          };
     
-    //   const data = await fakeRequest(app)
-    //     .delete('/quotes/2')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200); 
+      const data = await fakeRequest(app)
+        .delete('/quotes/2')
+        .expect('Content-Type', /json/)
+        .expect(200); 
     
-    //   expect(data.body).toEqual(expectation);
+      expect(data.body).toEqual(expectation);
 
-    //   const allQuotes = await fakeRequest(app)
-    //     .get('/quotes')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200); 
+      const allQuotes = await fakeRequest(app)
+        .get('/quotes')
+        .expect('Content-Type', /json/)
+        .expect(200); 
       
-    //   expect(allQuotes.body)
-    //     .toEqual(expect.not.arrayContaining([expectation]));
-    // });
+      expect(allQuotes.body)
+        .toEqual(expect.not.arrayContaining([expectation]));
+    });
     ///////////// new tests go above ///////////////
   });
 });
