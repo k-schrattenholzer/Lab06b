@@ -547,61 +547,56 @@ describe('app routes', () => {
       expect(allQuotes.body).toEqual(expect.arrayContaining([expectation]));
     });
 
-    // test('updates a quote', async() => 
-    // {
+    test('updates a quote', async() => 
+    {
 
-    //   const expectation = 
-    //       {
-    //         id: expect.any(Number),
-    //         character: 'Garnet',
-    //         character_id: 1,
-    //         quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
-    //       };
+      const expectation = 
+          {
+            id: expect.any(Number),
+            character_id: 1,
+            quote:'Love at second sight doesn\'t exist. Love takes time and love takes work.'
+          };
     
-    //   const data = await fakeRequest(app)
-    //     .put('/quotes/1')
-    //     .send(
-    //       { 
-    //         character: 'Garnet',
-    //         character_id: 1,
-    //         quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.'
-    //       })
-    //     .expect('Content-Type', /json/)
-    //     .expect(200); 
+      const data = await fakeRequest(app)
+        .put('/quotes/1')
+        .send(
+          { 
+            character_id: 1,
+            quote:'Love at second sight doesn\'t exist. Love takes time and love takes work.'
+          })
+        .expect('Content-Type', /json/)
+        .expect(200); 
     
-    //   expect(data.body).toEqual(expectation);
-    // });
+      expect(data.body).toEqual(expectation);
+    });
 
-    // test('updates a character', async() => 
-    // {
-
-    //   const expectation = 
-    //       {
-    //         id: expect.any(Number),
-    //         name: 'Smoky Quartz',
-    //         img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
-    //         species: '85% Gem | 75% Human',
-    //         gem_type: 'Who knows?',
-    //         weapon: 'their funny bone',
-    //         age: 'unknown'
-    //       };
+    test('updates a character', async() => 
+    {
+      const expectation = 
+          {
+            id: expect.any(Number),
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown',
+            character_id: 23            
+          };
     
-    //   const data = await fakeRequest(app)
-    //     .put('/characters/1')
-    //     .send(
-    //       { 
-    //         name: 'Smoky Quartz',
-    //         img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
-    //         species: '85% Gem | 75% Human',
-    //         gem_type: 'Who knows?',
-    //         weapon: 'their funny bone',
-    //         age: 'unknown' 
-    //       })
-    //     .expect('Content-Type', /json/)
-    //     .expect(200); 
+      const data = await fakeRequest(app)
+        .put('/character-info/23')
+        .send(
+          { 
+            img: 'https://static.wikia.nocookie.net/steven-universe/images/6/60/Smoky_Quartz_3.png',
+            species: '85% Gem | 75% Human',
+            gem_type: 'Who knows?',
+            weapon: 'their funny bone',
+            age: 'unknown',
+            character_id: 23,
+          });
     
-    //   expect(data.body).toEqual(expectation);
-    // });
+      expect(data.body).toEqual(expectation);
+    });
 
     // test('deletes a character', async() => 
     // {
