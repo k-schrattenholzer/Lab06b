@@ -42,7 +42,7 @@ describe('app routes', () => {
         age: '~ 15'
       }]
       ;
-
+      
       const response = await fakeRequest(app)
         .get('/character-info/15')
         .expect('Content-Type', /json/)
