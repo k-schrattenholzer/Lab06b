@@ -6,6 +6,8 @@ const fakeRequest = require('supertest');
 const app = require('../lib/app');
 const client = require('../lib/client');
 
+jest.setTimeout(20000);
+
 describe('app routes', () => {
   describe('routes', () => {
     let token;
@@ -22,8 +24,8 @@ describe('app routes', () => {
         });
       
       token = signInData.body.token; // eslint-disable-line
-    }, 200000);
-  
+    });
+
     afterAll(done => {
       return client.end(done);
     });
@@ -56,42 +58,49 @@ describe('app routes', () => {
           character_name: 'Garnet',
           character_id: 1,
           quote:'Yes... Or, you can link your mind with the energy of all existing matter, channeling the collective power of the universe through your gem! Which results in.. *summons her weapon* At least that\'s my way of doing it.',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/d/d2/GarnetByKmesLenhi.png'
         },
         {
           id: 2,
           character_name: 'Garnet',
           character_id: 1,
           quote:'Love at first sight doesn\'t exist. Love takes time and love takes work.',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/d/d2/GarnetByKmesLenhi.png'
         },
         {
           id: 3,
           character_name: 'Garnet',
           character_id: 1,
-          quote:'You are not two people, and you are not one person. You… are an experience, and make sure you’re a good experience! Now, Go. Have. FUN.'
+          quote:'You are not two people, and you are not one person. You… are an experience, and make sure you’re a good experience! Now, Go. Have. FUN.',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/d/d2/GarnetByKmesLenhi.png'
         },
         {
           id: 4,
           character_name: 'Garnet',
           character_id: 1,
-          quote:'Steven: Woah. We made it? Garnet: I carried you while you took a nap.'
+          quote:'Steven: Woah. We made it? Garnet: I carried you while you took a nap.',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/d/d2/GarnetByKmesLenhi.png'
         },
         {
           id: 5,
           character_name: 'Stevonnie',
           character_id: 2,
-          quote:'I wish you were here. If we were together, it would be okay. But we are together, and it\'s not. I\'m alone.'
+          quote:'I wish you were here. If we were together, it would be okay. But we are together, and it\'s not. I\'m alone.',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png'
         },
         {
           id: 6,
           character_name: 'Stevonnie',
           character_id: 2,
-          quote:'You wanna dance? Let\'s go. And it\'s Stevonnie; I am not your baby.'
+          quote:'You wanna dance? Let\'s go. And it\'s Stevonnie; I am not your baby.',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png'
         },
         {
           id: 7,
           character_name: 'Stevonnie',
           character_id: 2,
-          quote:'You have so many worlds and I don\'t even have one! It\'s not fair! I. Want. ONE! I want my own army! I want my own planet! I deserve it! I\'m just as important as you!'
+          quote:'You have so many worlds and I don\'t even have one! It\'s not fair! I. Want. ONE! I want my own army! I want my own planet! I deserve it! I\'m just as important as you!',
+          img: 'https://static.wikia.nocookie.net/steven-universe/images/4/49/Stevonnie_BC.png'
         },
         {
           id: 8,
@@ -515,19 +524,19 @@ describe('app routes', () => {
     });
 
     test('creates a quote', async() => {
-
+      
       const expectation = 
         {
-          id: 32,
+          id: expect.any(Number),
           character_id: 23,
           character_name: 'Sour Cream',
-          quote:'This is a very profound quote from a beloved character.',
+          quote:'This is a very profound quote from a beloved character.'
         };
 
       const new_quote = 
           {
             character_id: 23,
-            quote:'This is a very profound quote from a beloved character.',
+            quote:'This is a very profound quote from a beloved character.'
           };
 
       // const data = 
