@@ -25,6 +25,7 @@ async function run() {
       })
     );
 
+    // eslint-disable-next-line no-unused-vars
     const user = users[0].rows[0];
 
 
